@@ -1,16 +1,34 @@
 // complete the given function
+    function ReverseString(str) {
+      
+        // Check input
+        if(!str || str.length < 2 ||
+                typeof str!== 'string') {
+            return 'Not valid';
+        }
+          
+        // Take empty array revArray
+        const revArray = [];
+        const length = str.length - 1;
+          
+        // Looping from the end
+        for(let i = length; i >= 0; i--) {
+            revArray.push(str[i]);
+        }
+          
+        // Joining the array elements
+        return revArray.join('');
+    }
+      
 
 function palindrome(str){
-  const len = string.length;
 
-    // loop through half of the string
-    for (let i = 0; i < len / 2; i++) {
+  let temp = str;
+  let rev = ReverseString(str);
 
-        // check if first and last string are same
-        if (string[i] !== string[len - 1 - i]) {
-            return false;
-        }
-    }
-    return true;
+  if(temp.localeCompare(rev)){
+	  return true;
+  }
+   return false;
 }
 module.exports = palindrome
