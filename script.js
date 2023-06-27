@@ -27,8 +27,8 @@ function palindrome(str){
   let rev = ReverseString(str);
 
   if(temp.localeCompare(rev)){
-	  return true;
+	  return false;
   }
-   return false;
+   return true;
 }
 module.exports = palindrome
